@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GiphyService } from '../services/giphy.service';
 
 @Component({
   selector: 'app-page-content',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private giphyService: GiphyService
+  ) { }
 
   ngOnInit(): void {
+    this.giphyService.giphs$.subscribe(r => {
+      console.log(r);
+    })
   }
 
 }
