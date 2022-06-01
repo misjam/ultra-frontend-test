@@ -7,13 +7,12 @@ import { GiphyService } from '../services/giphy.service';
   styleUrls: ['./page-content.component.scss']
 })
 export class PageContentComponent implements OnInit {
-
   constructor(
-    private giphyService: GiphyService
+    public giphyService: GiphyService
   ) { }
 
   ngOnInit(): void {
-    this.giphyService.giphs$.subscribe(r => {
+    this.giphyService.gif$.subscribe(r => {
       console.log(r);
     })
   }

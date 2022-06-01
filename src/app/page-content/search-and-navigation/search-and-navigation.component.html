@@ -1,0 +1,21 @@
+<div class="container">
+    <div>
+        <input class="search-field" type="text" [formControl]="searchCtrl" (keydown.enter)="addSearchQuery()" />
+        <div class="hint">Press enter to search</div>
+        <div class="queries">
+            <ng-container *ngFor="let q of searchQueries">
+                <div class="query">
+                    <div class="pill">
+                        <img src="../../../assets/img/close.svg" (click)="removeQuery(q)" />
+                        <div class="text">{{q}}</div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div>
+        <ngb-pagination [(page)]="giphyService.page" [pageSize]="giphyService.limit"
+            [collectionSize]="giphyService.totalCount" [maxSize]="3" (pageChange)="onPageChange($event)">
+        </ngb-pagination>
+    </div>
+</div>

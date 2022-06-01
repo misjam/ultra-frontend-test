@@ -1,1 +1,8 @@
-page-content works!
+<div class="container">
+    <div class="search-and-navigation">
+        <app-search-and-navigation></app-search-and-navigation>
+    </div>
+    <div class="gifs-grid">
+        <app-gifs-grid [gifs]="(giphyService.gif$ | async)?.data"></app-gifs-grid>
+    </div>
+</div>
