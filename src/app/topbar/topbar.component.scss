@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+.image {
+    a {
+        display: flex;
+        img {
+            margin-right: 20px;
+            &:nth-child(2) {
+                height: 16px;
+                align-self: center;
+            }
+        }
+    }
+}
+.links {
+    display: flex;
+    flex-direction: row;
+}
+
+.link-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-left: 16px;
+    &__twitter {
+        background-image: url("https://api.website.ultra.io/uploads/bc969cc65de548d9a3dacc0f7ed43086.svg");
+    }
+    &__telegram {
+        background-image: url("https://api.website.ultra.io/uploads/7ed2e63ca9f84edd9e4f340c4656b351.svg");
+    }
+    &__youtube {
+        background-image: url("https://api.website.ultra.io/uploads/4c3d350b3ba04a9a88f16e167e3ce7ba.svg");
+    }
+    &__discord {
+        margin-top: 2px;
+        background-image: url("https://api.website.ultra.io/uploads/discord_0382f8cafb.svg");
+    }
+}
