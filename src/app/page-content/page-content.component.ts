@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { GiphyService } from '../services/giphy.service';
+import { OnInit } from '@angular/core';
+import { Component } from '@angular/core'
+import { GiphyService } from '../services/giphy.service'
 
 @Component({
   selector: 'app-page-content',
@@ -12,7 +13,6 @@ export class PageContentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.giphyService.init();
+    this.giphyService.init()
   }
-
 }
