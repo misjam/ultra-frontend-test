@@ -6,8 +6,7 @@ import { GiphyService } from './services/giphy.service';
 const routes: Routes = [
     {
         path: '',
-        component: AppComponent,
-        resolve: [GiphyService]
+        component: AppComponent
     },
 ];
 
