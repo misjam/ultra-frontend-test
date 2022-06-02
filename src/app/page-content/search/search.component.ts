@@ -3,11 +3,11 @@ import { FormControl } from '@angular/forms';
 import { GiphyService } from 'src/app/services/giphy.service';
 
 @Component({
-  selector: 'app-search-and-navigation',
-  templateUrl: './search-and-navigation.component.html',
-  styleUrls: ['./search-and-navigation.component.scss']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class SearchAndNavigationComponent implements OnInit {
+export class SearchComponent implements OnInit {
   searchCtrl = new FormControl('');
   searchQueries: string[] = [];
   page = 1;
@@ -30,6 +30,5 @@ export class SearchAndNavigationComponent implements OnInit {
     }
     this.searchCtrl.setValue('');
   }
-
 
 }

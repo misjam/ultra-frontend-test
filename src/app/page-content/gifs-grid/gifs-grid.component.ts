@@ -13,13 +13,8 @@ export class GifsGridComponent implements OnInit {
     public giphyService: GiphyService
   ) { }
 
-  ngOnChanges() {
-    console.log(this.gifs);
-  }
-
   ngOnInit(): void {
   }
-
 
   onPageChange(event: any) {
     this.giphyService.choosePage(event);
