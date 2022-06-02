@@ -1,4 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { GiphyService } from '../services/giphy.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { PageContentComponent } from './page-content.component';
 
@@ -8,9 +10,10 @@ describe('PageContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageContentComponent ]
+      declarations: [PageContentComponent],
+      imports: [HttpClientTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +22,9 @@ describe('PageContentComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should call GiphyService.init() on component ngOnInit', inject([GiphyService], (giphyService: GiphyService) => {
+    spyOn(giphyService, 'init');
+    component.ngOnInit();
+    expect(giphyService.init).toHaveBeenCalled();
+  }));
 });

@@ -1,5 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { GiphyService } from 'src/app/services/giphy.service';
 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { GifsGridComponent } from './gifs-grid.component';
 
 describe('GifsGridComponent', () => {
@@ -8,9 +10,10 @@ describe('GifsGridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GifsGridComponent ]
+      declarations: [GifsGridComponent],
+      imports: [HttpClientTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +22,9 @@ describe('GifsGridComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should call GiphyService.init() on component ngOnInit', inject([GiphyService], (giphyService: GiphyService) => {
+    spyOn(giphyService, 'choosePage');
+    component.onPageChange(1);
+    expect(giphyService.choosePage).toHaveBeenCalled();
+  }));
 });
