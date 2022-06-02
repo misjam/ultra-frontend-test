@@ -16,9 +16,7 @@ export class SearchAndNavigationComponent implements OnInit {
     public giphyService: GiphyService
   ) { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   removeQuery(query: string) {
     this.searchQueries = this.searchQueries.filter(q => q !== query);
@@ -32,9 +30,6 @@ export class SearchAndNavigationComponent implements OnInit {
     }
     this.searchCtrl.setValue('');
   }
-  onPageChange(event: any) {
-    console.log(event)
-    this.giphyService.choosePage(event);
-  }
+
 
 }

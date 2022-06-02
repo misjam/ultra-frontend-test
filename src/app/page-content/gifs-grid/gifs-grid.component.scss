@@ -1,7 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
 .grid {
     display: grid;
     gap: 32px;
     grid-template-columns: repeat(3, 130px);
     box-sizing: border-box;
     justify-content: center;
+}
+
+.pagination {
+    margin: auto;
+    margin-top: 24px;
+}
+
+ngb-pagination ::ng-deep .page-item .page-link {
+    color: grey;
+    border: none;
+    background: transparent;
+}
+
+ngb-pagination ::ng-deep .page-item.active .page-link {
+    color: #fff;
+    background-color: #896ae2;
 }

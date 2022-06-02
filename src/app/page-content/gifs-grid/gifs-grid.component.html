@@ -4,5 +4,9 @@
             <app-gif-card [gif]="gif"></app-gif-card>
         </ng-container>
     </div>
-
+    <div class="pagination" *ngIf="(giphyService.totalCount)">
+        <ngb-pagination [page]="giphyService.page" [pageSize]="giphyService.limit"
+            [collectionSize]="giphyService.totalCount" [maxSize]="3" (pageChange)="onPageChange($event)">
+        </ngb-pagination>
+    </div>
 </div>

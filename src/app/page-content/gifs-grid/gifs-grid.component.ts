@@ -21,5 +21,8 @@ export class GifsGridComponent implements OnInit {
   }
 
 
+  onPageChange(event: any) {
+    this.giphyService.choosePage(event);
+  }
 
 }

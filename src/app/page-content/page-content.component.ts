@@ -12,9 +12,7 @@ export class PageContentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.giphyService.gif$.subscribe(r => {
-      console.log(r);
-    })
+    this.giphyService.init();
   }
 
 }
